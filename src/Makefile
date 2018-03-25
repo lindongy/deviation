@@ -7,7 +7,7 @@ MAKEFLAGS += --no-builtin-rules
 ## Provide some convenient make targets  ##
 ###########################################
 ifndef  TARGET
-TARGET   ?= devo8
+TARGET   ?= devo10
 default: $(TARGET)
 
 ALLTARGETS = $(filter-out common,$(notdir $(wildcard target/*)))
