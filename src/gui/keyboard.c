@@ -382,9 +382,9 @@ static unsigned press_cb(u32 button, unsigned flags, void *data)
             }
             //After DONE it is possible that obj and keyboard are invalid
         } else if (CHAN_ButtonIsPressed(button, BUT_RIGHT)) {
-            navigate_item(keyboard, 1 , 0);
+            navigate_item(keyboard, -1 , 0);
         }  else if (CHAN_ButtonIsPressed(button, BUT_LEFT)) {
-            navigate_item(keyboard, -1, 0);
+            navigate_item(keyboard, 1, 0);
         } else if (CHAN_ButtonIsPressed(button, BUT_UP)) {
             navigate_item(keyboard, 0 , -1);
         }  else if (CHAN_ButtonIsPressed(button, BUT_DOWN)) {
