@@ -1,263 +1,389 @@
 ﻿简体中文
+: is %d%%, safe value = %d%%\n
+当前值为 %d%%,\n安全值为 %d%%\n
+: is %d%%,\nsafe value = %d%%
+当前值为 %d%%,\n安全值为 %d%%
 :# Channels
 通道数
->:%d bytes left
-: is %d%%, safe value = %d%%\n
-当前值为%d%%, 安全开机设定为%d%%\n
-: is %d%%,\nsafe value = %d%%
-当前值为%d%%,\n安全开机设定为%d%%
->:1 sec
+:%d bytes left
+剩余 %d 字节
+:1 sec
+1秒
 :1-to-1
-45度曲线
->:10 sec
+等比
+:10 sec
+10秒
 :11 Point
 11点曲线
 :13 Point
 13点曲线
+:1Mbps
+:250kbps
 :3 Point
 3点曲线
->:30 sec
+:3 Pos
+3点
+:30 sec
+30秒
 :4Ch w/ Dual-Rates
-4通直升机
+直升机-4通双动
 :5 Point
 5点曲线
->:5 sec
->:5+1
->:6+1
->:60 sec
+:5 sec
+5秒
+:5+1
+:6+1
+:60 sec
+60秒
 :6Ch Airplane
-6通直升机
+固定翼-6通
 :6Ch Helicopter
-6通固定翼
+直升机-6通
 :7 Point
 7点曲线
+:8Ch Helicopter
+直升机-8通
 :9 Point
 9点曲线
 :ABSVAL
 绝对值
+:ACKPKT
+:AD2GAIN
 :AIL
 副翼
->:AIL DR
+:AIL DR
 :AIL Inv
-副翼方向
+副翼反向
 :AIL Mix
-副翼螺距
->:AUX2
->:AUX3
->:AUX4
->:AUX5
->:AUX6
->:AUX7
+副翼混控
+:AUX2
+:AUX3
+:AUX4
+:AUX5
+:AUX6
+:AUX7
 :About Deviation
-关于本系统
->:Add
+关于Deviation
+:Add
+添加
 :Advanced
-高级模式1
+高级
+:AirSpd
+空速
 :Airplane
 固定翼
 :Alarm
-报警
+告警
 :Alarm interval
-报警间隔
+告警间隔
 :Alarm intvl
-报警间隔
->:All
+告警间隔
+:Alert interval
+告警间隔
+:Alert intvl
+告警间隔
+:All
+所有
+:AllCell
+所有
+:Alt
+副翼
+:Alt.
+副翼
+:Alt.max
+副翼最大
 :Altitude
 高度
+:Amp
+安培
+:Amps
+安培
+:Att.: -20dB
+-20dB
+:Att.: 0dB
+0dB
+:Audio settings
+声音设置
+:Audio volume
+音量
 :Auto
 自动
+:Average
+平均
 :Backlight
-背光
->:Bad/missing\nprotocol modules!
->:Bar
->:Bargraph
+亮度
+:Bad/missing\nprotocol modules!
+协议模块\n损坏或者缺失!
+:Bar
+柱
+:Bargraph
+柱状图
+:Bat
+电池
 :Batt alarm
-电量报警
+电池告警
+:Battery
+电池
 :Battery alarm
-电量报警
+电池告警
 :Battery too low,\ncan't save!
 电压过低,\n无法存盘!
->:Big-box
+:Big-box
+大显示框
 :Bind
 对频
 :Binding
 对频
+:Binding %s...\nPress ENT to stop
+%s 对频中...\n按ENT终止
 :Binding is in progress...\nMake sure model is on!\n\nPressing OK will NOT cancel binding procedure\nbut will allow full control of Tx.
 对频中...\n请确保飞机通电!\n\n点击OK不会中止对频\n但是可以退出本页面
-:Binding %s...\nPress ENT to stop
-对频中 %s...\n按ENT中止
->:Box
+:Blink
+闪烁
+:Blue-A
+蓝A
+:Box
+显示框
+:Brightness
+明亮
 :Button monitor
 按键监控
 :Buzz settings
-报警设置
+笛音设置
 :Buzz volume
 音量
 :Buzzer settings
-报警设置
+笛音设置
 :COL
 螺距
 :COL Inv
-螺距方向
+螺距反向
 :COL Limit
-螺距
+螺距限制
 :COL Mix
-螺距
+螺距混控
+:CPPM
+:CRTP Mode
+CRTP模式
+:CRTPLOG
+CRTP日志
 :CYC
-CYC
+C
 :Calibrate
 校准
 :Calibration done.
 校准完成.
+:Calibration done.\n \nPress ENT.
+\n\n校准完成,按ENT.
 :Cancel
 取消
 :Celsius
 摄氏
 :Center PW
-中点脉宽
+脉宽中点
 :Center all \nsticks and knobs\nthen press ENT
-将所有\n摇杆和旋钮置中\n然后按ENT
+\n将所有摇杆和旋钮\n置中后,按ENT
 :Ch
-通道
->:Ch%d
+CH
+:Ch%d
+CH%d
 :Chan mode
-通道模式
+模式
 :Change
-改变
+修改
 :Channel
 通道
 :Channel monitor
-通道监控
+通道监测
 :Channel output
 通道输出
->:Clock
+:Clock
+时钟
 :Complex
-多段式
+复合
 :Configure
-设置
+遥控器
 :Contrast
 对比度
->:Control
+:Control
+控制开关
 :Copy To
 复制到
 :Copy To...
-复制...
+复制到...
 :Critical battery level detected.\nSettings have been saved.\nAny future configuration settings\nwill NOT be saved.\n\nChange batteries now!
 检测到电压过低.\n当前设置已经存盘.\n以后的设置将无法存盘.\n\n请立即更换电池！
 :Curve
 曲线
 :Cyclic1
-CCPM1
+C-副翼
 :Cyclic2
-CCPM2
+C-升降
 :Cyclic3
-CCPM3
+C-螺距
 :D/R & Exp
-舵量/曲线
+舵量曲线
 :D/R&Exp -AIL
-副翼舵量/曲线
+副翼曲线
 :D/R&Exp -ELE
-升降舵量/曲线
+升降曲线
 :D/R&Exp -RUD
-方向舵量/曲线
+方向曲线
+:DIS
+禁止
 :DR
 舵量
->:Datalog
->:Date
->:Date / Time
->:Date format
->:Date:
->:Day
+:Datalog
+数据日志
+:Date
+日期
+:Date / Time
+日期/时间
+:Date format
+日期格式
+:Day
+天
 :Deadband
 死区
+:Debuglog
+调试信息
 :Default
-缺省
->:Delete
+默认
+:Delete
+删除
 :Delta PW
 脉宽变化
+:Deviation
 :Deviation FW version:
-Deviation固件版本:
+版本:
+:Deviation\n   USB
+Deviation\n   U盘
 :Dimmer target
-背光减弱至
+自动调整到
 :Dimmer time
-背光减弱时间
+持续时间
+:Disabled
+禁止
 :Dn
 下
 :Do you really want\nto reset the\n permanent timer %d?
-是否确定\n重置持续\n计时器%d?
+您真的想重置计时器 %d?
 :Down
 下
+:DynTrim
+动态微调
 :ELE
 升降
->:ELE DR
+:ELE DR
 :ELE Inv
-升降方向
+升降反向
 :ELE Mix
-升降螺距
+升降混控
 :EXPO %d
-指数曲线%d
->:Edit
->:Enable
->:Enabled
+指数 %d
+:Edit
+编辑
+:Enable
+允许
+:Enabled
+已允许
 :Enter
 进入
 :Exit
 退出
+:Expert
+导出
 :Expo&DR
-三段式
->:Extend
->:FMODE
->:Fades
+三项
+:Extend
+扩展
+:External OSD
+外置OSD
+:External voice\ncurrently not\navailable
+位置声音无效
+:F.Log filter
+飞行日志
+:FMODE
+:Fades
+消隐
 :Fahren
 华氏
 :Fail-safe
 失控保护
+:Failsafe
+失控保护
 :File
-模型文件
+文件
 :Fixed
-固定
+固定值
 :Fixed ID
-固定ID码
+固定ID
 :Fly mode
 飞行模式
 :Foot
 英尺
+:Format
+格式
 :Frame Size
-总脉宽
+帧长
+:Freq Tune
+频率调整
+:Freq-Coarse
+调宽
+:Freq-Fine
+调窄
+:Fuel
+油耗
 :GEAR
-尾舵
->:GPS
->:GPS Alt.
->:GPS Coords
->:GPS Speed
->:GPS Time
+:GPS
+:GPS Alt.
+GPS高度
+:GPS Coords
+GPS距离
+:GPS Speed
+GPS速度
+:GPS Time
+GPS时间
 :Generic settings
 基本设置
+:Green
+绿
 :Gyro sense
-锁尾感度
+陀螺感度
 :H
 高
->:H-trim
->:HOLD
+:H-trim
+水平微调
+:HOLD
+保持
+:Heading
+标题
 :Heli
 直升机
->:Heli/Standard GUI
+:Heli/Standard GUI
+直升机-6通标准界面
 :Helicopter
 直升机
 :High-Rate
-普通飞行
+高位
+:HighSpeed
+高速
 :Hold position
-熄火油门值
->:Holds
->:Hour
+保持点位
+:Holds
+保持
+:Hour
+小时
 :Icon
 图标
->:Idle Up 1
->:Idle Up 2
+:Idle Up 1
+模式1
+:Idle Up 2
+模式2
 :Input
 输入
 :Input monitor
-摇杆输入监控
+输入监测
 :Insert
 插入
 :Inverted
@@ -267,16 +393,21 @@ Deviation固件版本:
 :LCD settings
 LCD设置
 :LEFT_H
-左水平
+水平左
 :LEFT_V
-左垂直
+垂直左
 :LIN
 线性
+:LQI
+:LQI output
+LQI输出
+:LRSSI
 :Language
 语言
 :Latitude
 纬度
->:Layout: Long-Press ENT
+:Layout: Long-Press ENT
+长按ENT预览
 :Left
 左
 :Length
@@ -284,86 +415,114 @@ LCD设置
 :Linked
 关联
 :Load
-读取
+加载
+:Load Layout
+加载视图
+:Load Model
+加载模型
+:Load Model Template
+加载模板
 :Load...
-读取...
+加载...
 :Longitude
 经度
->:Loss
-:Low Battery
-低电量
+:Loss
+丢失
 :Low-Rate
-3D飞行2
+低位
 :M
 中
->:MIX
+:MIX
 :Main menu
 主菜单
 :Main page
-主页面
+首页
 :Main page config
-定制主页面
->:Manual
+定制首页
+:Manual
+手动
 :Max Limit
-最大舵量
+最大值
 :Menu
-快捷菜单
+菜单
 :Meter
 米
 :Mid-Rate
-3D飞行1
+中位
 :Min Limit
-最小舵量
+最小值
 :Min/Max
-最低/最高
->:Minute
+最小/最大
+:MinCell
+最小单元
+:Minute
+分钟
+:Missing Modules:\n
+缺失模块:
 :Mixer
 混控
+:Mixer    Reorder:Hold R+
+长按R+,重置顺序
 :Mixer GUI
-设置界面
+混控界面
+:Mixer output
+混控输出
 :Mixers
-混控
+混控数
 :Mode
 模式
 :Mode %d
-模式%d
->:Model
+模式 %d
+:Model
+模型
 :Model menu
-模型设置
+模型
 :Model name
-模型命名
+名称
 :Model needs reset\nfor standard mixer
-切换到通用模式\n需要重置,确定吗?
+切换到标准模式?\n模型设置将被清除。\n确定切换吗?
 :Model needs to be reset\nin order to switch to the standard mixer
-本设置与通用模式不兼容,需要进行重置,\n是否确定?
+切换到标准模式将重置模型设置
 :Model setup
-模型设置
+设置
 :Model type
-模型类型
->:Momentary
->:Month
+类型
+:Module Error
+模块错误
+:Momentary
+瞬间
+:Month
+月
 :Move Down
 下移
 :Move Up
 上移
 :Move sticks and knobs\nto max & min positions\nthen press ENT
-拨动摇杆和旋钮,\n先至最小再至最大位置,\n然后按ENT
+\n将摇杆和旋钮从最大\n移动到最小值后,按ENT
+:Multi
+多旋翼
+:Multirotor
+多旋翼
 :Mux
-作用
+混控方式
 :Neg
 负
 :New
-新增
->:No
-:No Trim
+新建
+:No
 无
+:No Trim
+无微调
+:No range test possible.
+可能无法范围测试.
 :None
 无
 :Normal
 正常
 :Notch PW
-通道间隔
->:Num Channels
+脉宽间隔
+:Num Channels
+通道数
 :Off
 关闭
 :Offset
@@ -371,24 +530,34 @@ LCD设置
 :Ok
 确定
 :On
-开启
->:On/Off
+打开
+:On/Off
+开/关
+:OrangeRx
+:Outputs
+输出
 :PIT
 螺距
->:PIT Mix
->:PPM
->:PPM In
->:PPM%d
->:PPMIn Cfg (Extend)
+:PIT Mix
+螺距混控
+:PPM
+:PPM In
+PPM输入
+:PPM%d
+:PPMIn Cfg (Extend)
+PPM输入配置(扩展)
 :Page
-模式1-N
->:Page Config
+当前页
+:Page Config
+配置
+:Peak
+峰值
 :Pitch curves
 螺距曲线
 :Plane
 固定翼
 :Point
-点
+点位
 :Pos
 正
 :Pos 0
@@ -400,113 +569,180 @@ LCD设置
 :Pos/Neg
 正/负
 :Position %d
-档位%1
->:Power On alarm
->:Power-down alert
+点位 %d
+:Power On alarm
+上电告警
+:Power reduced to
+功率调至
+:Power-down alert
+低电告警
 :Prealert interval
-预警间隔
+告警间隔
 :Prealert intvl
-预警间隔
+告警间隔
 :Prealert time
-预警时间
+告警时间
 :Press 'Ent' to turn USB Filesystem
-按ENT改变USB盘状态
+按ENT打开U盘
 :Press ENT to change
-按ENT更改
+按ENT保存修改
 :Press ENT to copy to
-按ENT复制
+按ENT复制到
 :Press ENT to load
-按ENT读取
+按ENT加载
+:Press ENT to start test.
+按ENT开始测试
+:Press ENT to stop test.
+按ENT停止测试
 :Press ENT to turn \nUSB drive
-按ENT使U盘
+按ENT 将U盘
+:Press ENT.
+按ENT
 :Protocol
 通信协议
 :PwrDn alert
-无电提示
->:PwrOn alarm
+低电告警
+:PwrOn alarm
+上电告警
 :RIGHT_H
-右水平
+水平右
 :RIGHT_V
-右垂直
+垂直右
 :RPM
 转数
->:RTC Time
+:RPYT
+:RSSI
+:RSSIChan
+RSSI通道
+:RTC Time
+RTC时间
 :RUD
 方向
->:RUD DR
->:Rate
+:RUD DR
+:Range Test
+范围测试
+:Rate
+间隔
 :Re-Init
-初始化
->:Real Time Clock
+对频…
+:Re-bind
+重新对频
+Real Time Clock
+实时钟
 :Remove
 删除
 :Reset
 重置
 :Reset Permanent Timer?
-是否确定重置\n持续计时器?
+重置持续计时器?
 :Reset sw
 重置开关
 :Reverse
-反向
+反向设定
 :Reversed
 反向
 :Revert
-回滚修改
+放弃修改
 :Right
 右
+:RxV
+电压
+:S.PORT Out
+S.PORT输出
+:SW A
+开关A
+:SW B
+开关B
+:SW C
+开关C
+:SW D
+开关D
+:SW E
+开关E
+:SW F
+开关F
+:SW G
+开关G
+:SW H
+开关H
 :Safe Val
-熄火值
+安全值
 :Safety
-熄火开关
->:Sample Rate
+安全开关
+:SatCount
+卫星数
 :Save
 保存
+:Save Model as...
+另存为...
 :Scale
 比例
 :Scale%s
 比例%s
 :Scanner
-信号扫描器
->:Second
->:Select
+扫描器
+:Second
+秒
+:Select
+选择
+:Select Ico
+选择图标
+:Select Language
+选择语言
 :Servo
 舵机
->:Set
->:Set date
->:Set permanent timer
->:Set time
->:Set to
->:Set:
+:Servo Hz
+舵机频率
+:Set
+设置
+:Set date
+设置日期
+:Set permanent timer
+设置计时器
+:Set time
+设置时间
+:Set to
+设为
+:Setup
+设置
 :Simple
-一段式
+单项
 :Simple 4 Channel
-4通道
->:Small-box
->:Smooth
+直升机-4通
+:Small-box
+小显示框
+:Smooth
+平滑性
 :Speed
-舵机速率
+速度
 :Src
-输入
->:Standard
+输入源
+:Standard
+常规
 :Standard Mixer
-通用模式
+常规混控
 :Start
-开始时间
+开始
+:Start test
+开始测试
 :Step
-幅度
->:Stick
+步进
+:Stick
+摇杆
 :Stick input
 摇杆输入
 :Stick mode
 摇杆模式
 :Sticks
 摇杆/旋钮
+:Stop test
+停止测试
 :Subtrim
-微调
+通道中点
 :Swash
-斜盘设置
+十字盘
 :SwashType
-斜盘模式
+类型
 :Switch
 开关
 :Switch assignment
@@ -520,21 +756,21 @@ LCD设置
 :THR
 油门
 :TRIMLH+
-左水平+
+水平左+
 :TRIMLH-
-左水平-
+水平左-
 :TRIMLV+
-左垂直+
+垂直左+
 :TRIMLV-
-左垂直-
+垂直左-
 :TRIMRH+
-右水平+
+水平右+
 :TRIMRH-
-右水平-
+水平右-
 :TRIMRV+
-右垂直+
+垂直右+
 :TRIMRV-
-右垂直-
+垂直右-
 :TRIM_L+
 左上+
 :TRIM_L-
@@ -543,69 +779,81 @@ LCD设置
 右上+
 :TRIM_R-
 右上-
->:TRN
+:TRN
+:Telem %d
+回传 %d
 :TelemRPM
-转数
+转/秒
+:TelemRSSI
+RSSI
 :TelemT
 温度
 :TelemV
 电压
 :Telemetry
-双向回传
+回传
 :Telemetry config
-双向回传设置
+回传配置
 :Telemetry monitor
-双向回传监控
+回传监测
 :Telemetry settings
-双向回传设置
+回传设置
 :Temp
 温度
 :Temperature
 温度
->:Template
+:Template
+模板
 :Template..
-模板..
+模板...
 :Thr hold
-油门熄火
+油门保持
 :Throttle curves
 油门曲线
 :Throttle hold
-油门熄火
+油门保持
 :Time
 时间
->:Time format
+:Time format
+时间格式
 :Timer
 定时器
+:Timer %d
+定时器 %d
 :Timer settings
 定时器设置
 :Timer%d
 定时器%d
 :Timers
 定时器
-:Timeup interval
-超时报警间隔
 :Timeup intvl
-超时报警间隔
->:Toggle
+超时告警间隔
+:Toggle
+开关
 :Touch Calibrate
-触摸屏校准
+校准触摸屏
 :Touch Test
 触摸屏测试
 :Touch screen
 触摸屏
 :Touch target %d
-触摸目标%d
->:Touch to Lock
->:Touch to Unlock
->:Trainer Cfg (Channel)
->:Trainer Cfg (Stick)
->:Trainer Sw
+触摸触发 %d
+:Touch to Lock
+触摸锁定
+:Touch to Unlock
+触摸解锁
+:Trainer Cfg (Channel)
+教练配置(通道)
+:Trainer Cfg (Stick)
+教练配置(摇杆)
+:Trainer Sw
+教练开关
 :Transmitter config
-遥控设置
+遥控器
 :Transmitter menu
-遥控设置
+遥控器
 :Travel adjust
-舵机行程
+行程调整
 :Trim
 微调
 :Trim +
@@ -613,64 +861,112 @@ LCD设置
 :Trim -
 微调-
 :Trim Step
-微调幅度
->:Trimbar
+步进
+:Trimbar
+微调条
 :Trims
-微调数
+微调设置
 :Turn Off
 关闭
 :Turn On
-开启
+打开
 :Tx power
-发射功率
->:Type
->:USB
->:USB Filesystem is currently 
->:Unknown
+功率
+:TxPower
+功率
+:Type
+类型
+:USB
+U盘模式
+:USB Filesystem is currently
+U盘文件系统正常
+:USE A.ACK
+使用A.ACK
+:Unknown
+未知
 :Up
 上
->:V-trim
+:V-trim
+垂直微调
+:VSI
 :Value
 值
 :Vibration
 振动
+:Vibration settings
+震动设置
+:Vibration:
+震动:
+:Video
+视频
+:Video Channel
+通道
+:Video Enable
+使用视频
+:Video setup
+设置
 :Virt
 虚拟
+:Voice config
+声音配置
 :Volt
 电压
->:Welcome
->:Year
->:Yes
+:Welcome
+欢迎
+:Year
+年
+:Yes
+是
 :Zero/Max
 零/最大
 :\n%d seconds left
-\n还剩%d秒
+\n剩余 %d 秒
 :\n\nBinding will end in %d seconds...
-\n\n对频在%d秒后结束
->:actual value
+\n\n%d 秒后结束对频...
+:actual value
+实际值
 :add
-附加
->:cntdn-prop
+加
+:beep
+蜂鸣器
+:cntdn-prop
+倒计时插件
 :countdown
 倒计时
->:delay
+:delay
+延迟
+:down
+下
+:from
+从
 :is not supported
 不支持
 :is turned off
-未开启
+已关闭
 :max
 最大
 :min
 最小
 :mult
-叠加
+乘
 :permanent
 持续计时
+:regular
+周期
 :replace
 替换
->:resulting value
->:stop-prop
+:resulting value
+生成值
+:stop-prop
+暂停插件
 :stopwatch
 秒表
->:value to add or set
->:value to set
+:up
+上
+:vTX MHz
+:value to add or set
+加或设定值
+:value to set
+设定值
+:voice
+语音
