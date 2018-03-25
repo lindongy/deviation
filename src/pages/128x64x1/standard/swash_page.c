@@ -30,7 +30,6 @@ enum {
 };
 #endif //OVERRIDE_PLACEMENT
 
-#if HAS_STANDARD_GUI
 #include "../../common/standard/_swash_page.c"
 
 
@@ -58,5 +57,3 @@ void PAGE_SwashInit(int page)
     update_swashmixes();
     GUI_Select1stSelectableObj();
 }
-
-#endif //HAS_STANDARD_GUI

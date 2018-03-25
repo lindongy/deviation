@@ -8,7 +8,7 @@
 #define SPIFLASH_SECTOR_OFFSET 54
 #define SPIFLASH_SECTORS 1024
 
-#define HAS_STANDARD_GUI    1
+#define HAS_STANDARD_GUI    0
 #define HAS_ADVANCED_GUI    1
 #define HAS_PERMANENT_TIMER 1
 #define HAS_TELEMETRY       1
@@ -20,13 +20,13 @@
 #define HAS_LAYOUT_EDITOR   1
 #define HAS_SCANNER         0
 #define HAS_EXTRA_SWITCHES  0
-#define HAS_EXTRA_BUTTONS  0
+#define HAS_EXTRA_BUTTONS   0
 #define HAS_MULTIMOD_SUPPORT 1
 #define HAS_VIDEO           0
 #define HAS_4IN1_FLASH      1
-#define HAS_EXTENDED_AUDIO  1
+#define HAS_EXTENDED_AUDIO  0
 #define HAS_AUDIO_UART5     0
-#define HAS_MUSIC_CONFIG    1
+#define HAS_MUSIC_CONFIG    0
 
 #ifdef BUILDTYPE_DEV
    #define DEBUG_WINDOW_SIZE 200
