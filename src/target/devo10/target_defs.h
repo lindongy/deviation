@@ -52,6 +52,6 @@
 
 /* Compute voltage from y = 0.003246x + 0.4208 */
 #define VOLTAGE_NUMERATOR 324
-#define VOLTAGE_OFFSET    421
+#define VOLTAGE_OFFSET    480
 
 #endif //_DEVO10_TARGET_H_
