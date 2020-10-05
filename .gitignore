@@ -7,6 +7,7 @@
 *.gz
 *.map
 *.dSYM
+*.fs_wrapper
 src/objs/
 utils/genspeech/mp3
 utils/genspeech/*.ini
