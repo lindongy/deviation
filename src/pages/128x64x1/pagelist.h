@@ -41,6 +41,8 @@ PAGEDEF(PAGEID_ABOUT,    PAGE_AboutInit,       NULL,                  NULL,     
 //----------
 PAGEDEF(PAGEID_MODEL,    PAGE_ModelInit,       PAGE_ModelEvent,       NULL,               MODEL_MENU,  _tr_noop("Model setup"))
 PAGEDEF(PAGEID_MIXER,    PAGE_MixerInit,       NULL,                  NULL,               ADVGUI_MENU, _tr_noop("Mixer"))
+PAGEDEF(PAGEID_SWASH,    PAGE_SwashInit,       NULL,                  NULL,               STDGUI_MENU, _tr_noop("Swash"))
+PAGEDEF(PAGEID_TIMER,    PAGE_TimerInit,       PAGE_TimerEvent,       NULL,               MODEL_MENU,  _tr_noop("Timers"))
 #if HAS_STANDARD_GUI
 PAGEDEF(PAGEID_REVERSE,  PAGE_ReverseInit,     NULL,                  NULL,               STDGUI_MENU, _tr_noop("Reverse"))
 PAGEDEF(PAGEID_DREXP,    PAGE_DrExpInit ,      PAGE_DrExpCurvesEvent, NULL,               STDGUI_MENU, _tr_noop("D/R & Exp"))
@@ -50,11 +52,9 @@ PAGEDEF(PAGEID_THROCURVES,PAGE_ThroCurvesInit, PAGE_CurvesEvent,      NULL,     
 PAGEDEF(PAGEID_PITCURVES,PAGE_PitCurvesInit,   PAGE_CurvesEvent,      NULL,               STDGUI_MENU, _tr_noop("Pitch curves"))
 PAGEDEF(PAGEID_THROHOLD, PAGE_ThroHoldInit,    NULL,                  NULL,               STDGUI_MENU, _tr_noop("Throttle hold"))
 PAGEDEF(PAGEID_GYROSENSE,PAGE_GyroSenseInit,   NULL,                  NULL,               STDGUI_MENU, _tr_noop("Gyro sense"))
-PAGEDEF(PAGEID_SWASH,    PAGE_SwashInit,       NULL,                  NULL,               STDGUI_MENU, _tr_noop("Swash"))
 PAGEDEF(PAGEID_FAILSAFE, PAGE_FailSafeInit,    NULL,                  NULL,               STDGUI_MENU, _tr_noop("Fail-safe"))
 PAGEDEF(PAGEID_SWITCHASSIGN,PAGE_SwitchAssignInit, NULL,              NULL,               STDGUI_MENU, _tr_noop("Switch assignment"))
 #endif
-PAGEDEF(PAGEID_TIMER,    PAGE_TimerInit,       PAGE_TimerEvent,       NULL,               MODEL_MENU,  _tr_noop("Timers"))
 #if HAS_TELEMETRY
 PAGEDEF(PAGEID_TELEMCFG, PAGE_TelemconfigInit, PAGE_TelemconfigEvent, NULL,               MODEL_MENU,  _tr_noop("Telemetry config"))
 #endif

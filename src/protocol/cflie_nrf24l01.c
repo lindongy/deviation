@@ -13,6 +13,8 @@
  along with Deviation.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#pragma GCC diagnostic ignored "-Waddress-of-packed-member"
+
 #include "common.h"
 #include "interface.h"
 #include "mixer.h"

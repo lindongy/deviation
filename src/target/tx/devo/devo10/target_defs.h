@@ -6,7 +6,7 @@
 #define SPIFLASH_SECTOR_OFFSET 54
 #define SPIFLASH_SECTORS 1024
 
-#define HAS_STANDARD_GUI    1
+#define HAS_STANDARD_GUI    0
 #define HAS_ADVANCED_GUI    1
 #define HAS_PERMANENT_TIMER 1
 #define HAS_TELEMETRY       1
@@ -23,9 +23,9 @@
 #define HAS_MULTIMOD_SUPPORT 1
 #define HAS_VIDEO           0
 #define HAS_4IN1_FLASH      0
-#define HAS_EXTENDED_AUDIO  1
+#define HAS_EXTENDED_AUDIO  0
 #define HAS_AUDIO_UART      0
-#define HAS_MUSIC_CONFIG    1
+#define HAS_MUSIC_CONFIG    0
 
 #define SUPPORT_CRSF_CONFIG 1
 
@@ -55,7 +55,7 @@
 
 /* Compute voltage from y = 0.003246x + 0.4208 */
 #define VOLTAGE_NUMERATOR 324
-#define VOLTAGE_OFFSET    421
+#define VOLTAGE_OFFSET    480
 
 #include "hardware.h"
 #include "../common/common_devo.h"
