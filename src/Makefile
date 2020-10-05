@@ -309,7 +309,7 @@ $(LAST_MODEL): model_template.ini tx_template.ini $(FONTS) $(PRE_FS)
 	cp model_template.ini filesystem/$(FILESYSTEM)/models/default.ini
 ifdef LANGUAGE
 	mkdir filesystem/$(FILESYSTEM)/language 2> /dev/null; \
-               CROSS=$(CROSS) ../utils/extract_strings.py -po -fs filesystem/$(FILESYSTEM)/language -targets $(LANGUAGE) -update -objdir $(ODIR)
+               CROSS=$(CROSS) ../utils/extract_strings.py -po -fs filesystem/$(FILESYSTEM)/language -targets $(TARGET) -language $(LANGUAGE) -update -objdir $(ODIR)
 endif
 	export tx=$(FILESYSTEM); \
 	number=2 ; while [ $$number -le $(NUM_MODELS) ] ; do \
