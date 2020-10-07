@@ -21,6 +21,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-update", action="store_true",
                         help="Update existing po files with modified string lists")
+    parser.add_argument("-upgrade", action="store_true",
+                        help="Upgarde existing language files with modified string lists")
     parser.add_argument("-language",
                         help="Language or pattern of language files to update")
     parser.add_argument("-fs",
@@ -35,7 +37,7 @@ def main():
                         help="Directory containing .o files to extract strings from")
     args = parser.parse_args()
 
-    if args.fs and not args.targets:
+    if args.targets and not args.fs:
         logging.error("Must specify both -targets with -fs")
         return False
 
@@ -45,11 +47,22 @@ def main():
         print("{}".format(len(uniq.keys())))
         return True
 
-    if not args.update:
+    if not args.update and not args.upgrade:
         if args.po:
             print_po_strings(uniq)
         else:
             print_strings(uniq)
+        return True
+
+    if args.upgrade:
+        ext = args.language.lower()
+        if len(ext) > 3:
+            ext = re.sub(r'^.*_', r'', ext)
+            ext = ext[-3:]
+        filename = "{}/lang.{}".format(args.fs, ext)
+        (language, translation) = parse_lang_file(filename, uniq)
+        if not upgrade_lang_file(filename, args.targets, language, translation):
+            return False
         return True
     files = (["fs/language/locale/deviation.{}.po".format(args.language)] if args.language
              else glob.glob("fs/language/locale/*.po"))
@@ -284,6 +297,98 @@ def parse_po_file(filename, uniq):    # pylint: disable=too-many-branches
             if msgid not in strings['DEFAULT']:
                 strings['DEFAULT'][msgid] = target_str
     return (ext, language, strings)
+
+
+def parse_langtext(_fh):
+    """Parse next gettext element for string list"""
+
+    msgid = None
+    in_multiline = False
+    _str = ""
+    # import pdb; pdb.set_trace()
+    while True:
+        line = _fh.readline().decode('utf-8')
+        if in_multiline:
+            if not line.startswith(':'):
+                _str = re.sub(r'\n|\r', '', line)
+            else:
+                lens = len(line)
+                _fh.seek(-lens, 1)
+            return(msgid, _str)
+
+        if not line:
+            return(msgid, _str)
+
+        if line.startswith(':'):
+            msgid = re.sub(':', "", line, 1)
+            msgid = re.sub(r'\n|\r', '', msgid)
+            in_multiline = True
+            continue
+    return (None, None)
+
+
+def parse_lang_file(filename, uniq):    # pylint: disable=too-many-branches
+    """Parse lang.* file into dictionary"""
+    strings = {'DEFAULT': {}}
+    language = "Unknown"
+    re_target = "|".join(TARGETS)
+
+    _fh = open(filename, "rb")
+
+    line = _fh.readline().decode('utf-8')
+    if not line:
+        return (None, None)
+    language = line
+
+    while True:
+        msgid, msgstr = parse_langtext(_fh)
+        if msgid is None:
+            break
+
+        if msgid not in ['DEFAULT']:
+            # strings['DEFAULT'].append(msgid)
+            strings['DEFAULT'][msgid] = msgstr
+
+    for msgid in uniq['__ORDER__']:
+        if msgid not in strings['DEFAULT']:
+            strings['DEFAULT'][msgid] = ""
+
+    return (language, strings)
+
+
+def upgrade_lang_file(outf, targets, language, translation):
+    """Write Deviation lang file for selected language"""
+    strings = {}
+    hashvalues = {}
+
+    for target in ["DEFAULT"] + targets:
+        # Hierarchically try to find best string
+        if target in translation:
+            strings.update(translation[target])
+    for string in sorted(strings.keys()):
+        value = strings[string]
+        if string == value:
+            continue
+        hval = fnv_16(string)
+        if hval in hashvalues:
+            logging.error("Conflict hash detected:\n%s\n%s",
+                          hashvalues[hval], value)
+            return False
+        hashvalues[hval] = value
+    try:
+        with open(outf, "wb") as _fh:
+            _fh.write(language.encode('utf-8'))
+            for key in sorted(strings.keys()):
+                value = strings[key]
+                if key == value:
+                    continue
+                _fh.write(":{}\n".format(key).encode('utf-8'))
+                if value:
+                    _fh.write("{}\n".format(value).encode('utf-8'))
+    except OSError:
+        logging.error("Can't write %s", outf)
+        return False
+    return True
 
 
 def system(cmd):
