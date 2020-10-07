@@ -26,9 +26,10 @@ utils/genspeech/*.zip
 #src/beta-*
 /local/
 coverage/
-src/.vs/
 
+.vs*/
 src/filesystem/
+src/target/common/
 
 src/cov-int/
 *.dll
@@ -36,12 +37,3 @@ src/cov-int/
 *.pyc
 *.zip
 .DS_Store
-
-src/target/common/filesystems/devofs/tests/DevoFS.bs
-src/target/common/filesystems/devofs/tests/DevoFS.c
-src/target/common/filesystems/devofs/tests/MYMETA.json
-src/target/common/filesystems/devofs/tests/MYMETA.yml
-src/target/common/filesystems/devofs/tests/blib
-src/target/common/filesystems/devofs/tests/pm_to_blib
-src/target/common/filesystems/devofs/tests/Makefile.old
-
