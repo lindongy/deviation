@@ -1,6 +1,7 @@
 ## the following disable builtin rules which we don't need
 ## and make debugging harder
 unexport LANGUAGE
+LANGUAGE ?= zh_CN
 MAKEFLAGS += --no-builtin-rules
 .SUFFIXES:
 
@@ -307,9 +308,13 @@ $(LAST_MODEL): model_template.ini tx_template.ini $(FONTS) $(PRE_FS)
 	echo 'name=Model1' > filesystem/$(FILESYSTEM)/models/model1.ini \
 		&& cat model_template.ini >> filesystem/$(FILESYSTEM)/models/model1.ini
 	cp model_template.ini filesystem/$(FILESYSTEM)/models/default.ini
-ifdef LANGUAGE
+	@echo " + extract_strings $(LANGUAGE) for $(TARGET)"
+ifeq "$(LANGUAGE)" "$(TARGET)"
 	mkdir filesystem/$(FILESYSTEM)/language 2> /dev/null; \
-               CROSS=$(CROSS) ../utils/extract_strings.py -po -fs filesystem/$(FILESYSTEM)/language -targets $(TARGET) -language $(LANGUAGE) -update -objdir $(ODIR)
+               CROSS=$(CROSS) ../utils/extract_strings.py -po -fs filesystem/$(FILESYSTEM)/language -targets $(LANGUAGE) -update -objdir $(ODIR)
+else
+	mkdir filesystem/$(FILESYSTEM)/language 2> /dev/null; \
+               CROSS=$(CROSS) ../utils/extract_strings.py -po -fs filesystem/$(FILESYSTEM)/language -targets $(TARGET) -language $(LANGUAGE) -upgrade -objdir $(ODIR)
 endif
 	export tx=$(FILESYSTEM); \
 	number=2 ; while [ $$number -le $(NUM_MODELS) ] ; do \
@@ -318,9 +323,9 @@ endif
 		done
 	@echo " + Checking string list length for $(FILESYSTEM)"
 ifeq "$(TYPE)" "dev"
-	../utils/check_string_size.py -target $(FILESYSTEM) -objdir $(ODIR)
+	../utils/check_string_size.py -target $(FILESYSTEM) -objdir $(ODIR) -fs filesystem/$(FILESYSTEM)/language
 else
-	../utils/check_string_size.py -target $(FILESYSTEM) -objdir $(ODIR) -quiet
+	../utils/check_string_size.py -target $(FILESYSTEM) -objdir $(ODIR) -fs filesystem/$(FILESYSTEM)/language -quiet
 endif
 	../utils/run_linter.py --diff --skip-github --no-fail
 

@@ -60,7 +60,7 @@ def main():
             ext = re.sub(r'^.*_', r'', ext)
             ext = ext[-3:]
         filename = "{}/lang.{}".format(args.fs, ext)
-        (language, translation) = parse_lang_file(filename, uniq)
+        (language, translation) = parse_lang_file("fs/language/lang.{}".format(ext), uniq)
         if not upgrade_lang_file(filename, args.targets, language, translation):
             return False
         return True

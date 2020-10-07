@@ -48,6 +48,8 @@ class MaxVal:
 def main():
     """Main routine"""
     parser = argparse.ArgumentParser()
+    parser.add_argument("-fs",
+                        help="Directory of output language files")
     parser.add_argument("-target", required=True,
                         help="Transmitter target")
     parser.add_argument("-objdir", required=True,
@@ -63,7 +65,7 @@ def main():
     max_bytes = MaxVal()
     max_count = MaxVal()
     for target_dir in dirs:
-        _bytes, count, line_length = read_target(target_dir, args.objdir)
+        _bytes, count, line_length = read_target(target_dir, args.objdir, args.fs)
         max_bytes.update(_bytes)
         max_count.update(count)
         max_line_length.update(line_length)
@@ -85,7 +87,7 @@ def main():
     return not get_error()
 
 
-def read_target(target_dir, objdir):
+def read_target(target_dir, objdir, fs):
     """Read all language files for a target and calculate max usage"""
     target = os.path.basename(target_dir)
     langfiles = glob.glob(os.path.join(target_dir, "language", "*"))
@@ -108,6 +110,7 @@ def read_target(target_dir, objdir):
         target_max_line_length.update(max_line_length)
     language = get_language(target)
     cmd = (os.path.join(SCRIPT_DIR, "extract_strings.py")
+           + " -fs " + fs
            + " -target " + language
            + " -objdir " + objdir)
     line_count = len(system(cmd).splitlines())
